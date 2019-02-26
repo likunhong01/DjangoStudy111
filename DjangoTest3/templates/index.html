@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    这里的url可以自动识别urls.py里
+    <form action="{% url 'indexx' %}">
+{#    <form action="{% request.path_info %}">#}
+        <p><input type="text" name="user" placeholder="用户名"></p>
+    </form>
+
+
+    <ul>
+{#        循环字典，取到的是key而不是value#}
+{#        {% for row in user_dict %}#}
+{#            <li>{{ row }}</li>#}
+{#        {% endfor %}#}
+{#        取key#}
+{#        {% for row in user_dict.keys %}#}
+{#            <li>{{ row }}</li>#}
+{#        {% endfor %}#}
+{#        取key和value#}
+{#        {% for k, row in user_dict.items %}#}
+{#            <li>{{ k }}——{{ row }}</li>#}
+{#        {% endfor %}#}
+
+{#        给上连接(不用正则表达式)#}
+{#        {% for k, row in user_dict.items %}#}
+{#            <li><a target="_blank" href="/detail/?nid={{ k }}">{{ row.name }}</a></li>#}
+{#        {% endfor %}#}
+
+
+        给上连接(用正则表达式)
+        {% for k, row in user_dict.items %}
+            <li><a target="_blank" href="/detail-{{ k }}.html">{{ row.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
