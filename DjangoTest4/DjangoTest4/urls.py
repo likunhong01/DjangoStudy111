@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^tpl1/', views.tpl1),
     url(r'^tpl2/', views.tpl2),
     url(r'^tpl3/', views.tpl3),
+    url(r'^user_list/', views.user_list),
 ]
