@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for u in username %}
+        {{ u }}
+    {% endfor %}
+
+
+    <script>
+        var usernames = "{{ username }}";
+        var usernames1 = usernames.replace(/\&quot;/g, '\"');
+        var usernames2 = JSON.parse(usernames_r);
+    </script>
+</body>
+</html>

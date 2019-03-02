@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+from app01 import models
 
 
 def tpl1(request):
@@ -12,7 +13,13 @@ def tpl2(request):
 def tpl3(request):
     return render(request, 'tpl3.html')
 
-
+import json
+def login(request):
+    Users = models.User.objects.all()
+    username = []
+    for i in Users:
+        username.append(i.username)
+    return render(request, "login.html",{'username': json.dumps(username)})
 
 
 
