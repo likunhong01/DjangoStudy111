@@ -6,8 +6,17 @@
 </head>
 <body>
     <div class="pg-header">lkk</div>
+    模板内容。。。。。
 
-    {% block content %} {% endblock %}
+    在下面block和endeblock里是可以变更的内容，注意区别命名
+    <div>
+    {% block content1 %} {% endblock %}
+    </div>
 
+    <div>
+    {% block content2 %} {% endblock %}
+    </div>
+
+    然后其他地方都是写好的模板，子html继承过去不能更改。。。。。
 </body>
 </html>
