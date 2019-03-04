@@ -47,8 +47,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="418">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -72,13 +72,13 @@
         <option value="$PROJECT_DIR$/utils/pagination.py" />
         <option value="$PROJECT_DIR$/templates/user_list.html" />
         <option value="$PROJECT_DIR$/DjangoTest4/settings.py" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/tpl3.html" />
         <option value="$PROJECT_DIR$/templates/tpl1.html" />
         <option value="$PROJECT_DIR$/templates/master.html" />
         <option value="$PROJECT_DIR$/templates/tag.html" />
         <option value="$PROJECT_DIR$/templates/引入tag.html" />
         <option value="$PROJECT_DIR$/app01/views.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
       </list>
     </option>
   </component>
@@ -88,7 +88,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="444" />
     <option name="y" value="18" />
     <option name="width" value="1455" />
@@ -208,7 +208,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="296" y="12" width="970" height="678" extended-state="1" />
+    <frame x="296" y="12" width="970" height="678" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -577,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state relative-caret-position="418">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>

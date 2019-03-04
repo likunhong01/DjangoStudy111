@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        <input type="text" name="user">
+        <input type="password" name="pwd">
+        <input type="checkbox" name="rmb" value="1">10秒免登陆
+        <input type="submit" value="提交">
+        <input id="btn1" type="button" value="按钮1">
+        <input id="btn2" type="button" value="按钮2">
+    </form>
+
+    <script src="/static/jquery-3.3.1.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+
+    <script>
+        $(function () {
+            // 全局设置，在请求头加上cookie的随机串
+            $.ajaxSetup({
+                beforeSend: function (xhr, settings) {
+                    xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken')),
+                }
+            });
+
+            $('#btn1').click(function () {
+                $.ajax({
+                    url: '/login/',
+                    type: 'POST',
+                    data: {'user':'root', 'pwd': '123'},
+                    // headers:{'X-CSRFtoken': $.cookie('csrftoken')},  // 加上随机串
+                    success:function (arg) {
+
+                    }
+                })
+            });
+        })
+    </script>
+
+</body>
+</html>
