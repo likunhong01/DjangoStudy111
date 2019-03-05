@@ -1,0 +1,18 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ ctime }}
+    {{ ctime }}
+
+    如果只想缓存这一个:时间10秒，缓存key是c1
+    {% cache 10 c1 %}
+    {{ ctime }}
+    {% endcache %}
+    这样就可以让这个时间第一次刷新后单独停留10秒
+</body>
+</html>

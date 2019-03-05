@@ -21,6 +21,7 @@
     <script>
         $(function () {
             // 全局设置，在请求头加上cookie的随机串
+
             $.ajaxSetup({
                 beforeSend: function (xhr, settings) {
                     xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken')),
