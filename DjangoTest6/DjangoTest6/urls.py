@@ -1,4 +1,4 @@
-"""DjangoTest5 URL Configuration
+"""DjangoTest6 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,12 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app01 import views
-from  django.conf.urls import url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^login/$', views.login),
-    url(r'^index/$', views.index),
-    url(r'^test/$', views.test),
-    url(r'^fm/$', views.fm),
 ]
