@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+    <input type="text">
+    <input type="button" value="ajax1" onclick="ajax1();">
+    <input type="text" id="url">
+    <input type="button" value="发送iframe" onclick="iframeRequest();">
+    <iframe id="ifm" src="http://www.baidu.com"></iframe>
+
+
+    伪造ajax请求
+    <form action="/ajax_json/" method="post" target="ifml">
+        <iframe id="ifm1" name="ifml"></iframe>
+        <input type="text" name="username">
+        <input type="text" name="email">
+        <input type="submit" onclick="sumitForm();" value="Form提交">
+    </form>
+
+
+    <script src="/static/jquery-3.3.1.js"></script>
+    <script>
+        function GetXHR(){
+            var xhr = null;
+            if(XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else{
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xhr;
+        }
+        function ajax() {
+            // 这里会出现浏览器内核不兼容的情况，因为不一定每个浏览器都一定是这个对象。
+            {#可以调用windows的window['XMLHttpRequest'],也可以加上上面的函数兼容#}
+            var xhr = getXHR();
+            xhr.open('GET', '/ajax_json/', true);
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4) {
+                    // 4代表接受完毕
+                    var obj = JSON.parse(xhr.response);
+                    console.log(obj)
+                }
+            };
+            // 请求头
+            xhr.setRequestHeader('k1','v1');
+            {#xhr.setRequestHeader('Content-Type','v1');#}
+            xhr.send('name=root;pwd=123');
+        }
+
+        function iframeRequest() {
+            var url = $('#url').val()
+            $('#ifm').attr('src',url);
+        }
+
+        function sumitForm() {
+            $('#ifm1').load(function () {
+                var text = $('#ifm1').contents().first('body').text();
+                var obj = JSON.parse(text);
+            })
+        }
+    </script>
+</body>
+</html>

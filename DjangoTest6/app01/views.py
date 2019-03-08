@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 # Create your views here.
 
@@ -137,3 +137,30 @@ class UserInfoForm(forms.Form):
 #         # models.UserInfo.objects.create(**obj.cleaned_data)
 #         # models.UserInfo.objects.filter(id=1).update(**obj.cleaned_data)
 #         return render(request, 'index.html',{'obj':obj})
+
+
+################## AJAX #####################
+def ajax(request):
+    return render(request, 'ajax.html')
+
+def ajax_json(request):
+    ret = {'status': True, 'data':None}
+    import json
+    return HttpResponse(json.dumps(ret))
+
+
+# 上传文件
+def upload(request):
+    return render(request,'upload.html')
+
+def upload_file(request):
+    username = request.POST.get('username')
+    fafafa = request.FILES.get('fafafa')
+    import os
+    img_path = os.path.join('static/imgs/',fafafa.name)
+    with open(img_path, 'wb') as f:
+        for item in fafafa.chunks():
+            f.write(item)
+    ret = {'code':True, 'data': img_path}
+    import json
+    return HttpResponse(json.dumps(ret))

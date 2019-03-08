@@ -22,4 +22,8 @@ urlpatterns = [
     url(r'^/index/', views.index),
     url(r'^/user_list/', views.user_list),
     url(r'^/edit-(\d+)/', views.user_edit),
+    url(r'^/ajax/$', views.ajax),
+    url(r'^/ajax_json/', views.ajax_json),
+    url(r'^/upload/', views.upload),
+    url(r'^/upload_file/', views.upload_file),
 ]
