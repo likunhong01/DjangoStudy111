@@ -164,3 +164,7 @@ def upload_file(request):
     ret = {'code':True, 'data': img_path}
     import json
     return HttpResponse(json.dumps(ret))
+
+
+def kind(request):
+    return render(request, 'kind.html')

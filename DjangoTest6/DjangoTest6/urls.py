@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^/ajax_json/', views.ajax_json),
     url(r'^/upload/', views.upload),
     url(r'^/upload_file/', views.upload_file),
+    url(r'^/kind/', views.kind),
 ]
