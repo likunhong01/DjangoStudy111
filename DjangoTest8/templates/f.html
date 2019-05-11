@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/first" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <input type="text" name="l_u">
+        <input type="text" name="l_p">
+        <input type="submit">
+    </form>
+
+    <form action="/first" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <input type="text" name="r_u">
+        <input type="text" name="r_p">
+        <input type="submit">
+    </form>
+</body>
+</html>
