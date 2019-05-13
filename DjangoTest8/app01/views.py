@@ -12,10 +12,10 @@ def first(request):
 
         # 如果是登录
         if l_u and l_p:
-            right_user = models.Login.objects.get(username=l_u)
+            right_user = models.Login.objects.filter(username=l_u)[0]
             if right_user and right_user.pwd == l_p:
                 return render(request, 's.html', {'age':right_user.age})
-        
+
         # 如果是注册
 
         pass
